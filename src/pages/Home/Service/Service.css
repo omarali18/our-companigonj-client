@@ -1,0 +1,61 @@
+.service-title {
+  text-align: center;
+  color: rgb(231, 61, 208);
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
+.service-container {
+  width: 75%;
+}
+.grid-item {
+  overflow: hidden;
+  position: relative;
+}
+.card-box {
+  background-color: rgb(63, 59, 59);
+  border: 2px solid wheat;
+}
+/* .grid-item .card-box {
+  transform: scale(1.3);
+  transition: all 0.3s ease-out;
+} */
+.grid-item:hover .card-box {
+  transform: scale(1) translateY(-10px);
+  opacity: 0.3;
+  transition: all 0.3s ease-out;
+}
+
+.detail-button {
+  position: absolute;
+  left: 0;
+  bottom: 130px;
+  width: 100%;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  display: none;
+  transition: 0s;
+}
+.detail-button .detail {
+  /* background-color: lavender; */
+  background-color: wheat;
+  color: black;
+  font-weight: 600;
+  padding: 10px 30px;
+}
+.detail-button .detail:hover {
+  background-color: rgb(56, 56, 230);
+  color: white;
+  font-weight: 600;
+  padding: 10px 30px;
+}
+.grid-item:hover .detail-button {
+  display: block;
+}
+@media only screen and (max-width: 540px) {
+  .service-container {
+    width: 90%;
+  }
+}
