@@ -52,6 +52,28 @@ const Header = () => {
                             Dashboard
                         </NavLink>
                     </li>} */}
+                    <li className="nav-item">
+                        <NavLink
+                            exact
+                            to="/dashboard"
+                            activeClassName="active"
+                            className="nav-links"
+                            onClick={handleClick}
+                        >
+                            Dashboard
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                            <NavLink
+                                    exact
+                                   to="/login"
+                                   activeClassName="active"
+                            className="nav-links"
+                                    onClick={handleClick}
+                                >
+                                    Login
+                                </NavLink>
+                            </li>
 
 
                     {

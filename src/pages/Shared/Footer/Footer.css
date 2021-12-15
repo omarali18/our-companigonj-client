@@ -1,0 +1,40 @@
+.footer-container {
+  background-color: #161616;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(157, 151, 233);
+}
+.footer-box {
+  padding: 45px 0;
+}
+.footer-manue {
+  text-align: center;
+}
+.footer-manue ul li {
+  list-style: none;
+  margin-top: 8px;
+}
+.footer-manue ul li .footer-list {
+  text-decoration: none;
+  color: rgb(157, 151, 233);
+  font-size: 18px;
+}
+.footer-manue ul li .footer-list:hover {
+  color: rgb(250, 250, 250);
+}
+.footer-manue ul li .footer-list:active {
+  color: rgb(235, 104, 104);
+}
+.Copyright {
+  text-align: center;
+  background-color: black;
+  color: rgb(167, 166, 166);
+  padding: 20px;
+}
+@media only screen and (max-width: 540px) {
+  .footer-manue {
+    text-align: left;
+  }
+  .footer-manue ul {
+    padding-left: 0;
+  }
+}

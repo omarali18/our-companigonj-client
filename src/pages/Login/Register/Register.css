@@ -1,0 +1,21 @@
+.register-container {
+  /* background-color: white; */
+}
+.login-image {
+  height: 100vh;
+}
+/* .input-text .input-field {
+  color: white;
+  background-color: black;
+} */
+
+/* @media only screen and (max-width: 540px) {
+  .input-text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+  }
+} */

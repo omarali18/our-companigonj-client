@@ -2,10 +2,7 @@ import React from 'react';
 import hospital from "../../../Images/hospital.jpg"
 import police from "../../../Images/police.jpg"
 import school from "../../../Images/school.jpg"
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import "./Service.css"
 import { Button, Grid } from '@mui/material';
@@ -68,19 +65,6 @@ const Service = () => {
     );
 };
 
-{/* <Card sx={{ maxWidth: 345 }}>
-<CardMedia
-    component="img"
-    height="194"
-    image={service.img}
-    alt="Paella dish"
-/>
-<CardContent>
-    <Typography variant="body2" color="text.secondary">
-        {service.name}
-    </Typography>
-</CardContent>
-</Card> */}
 
 
 
