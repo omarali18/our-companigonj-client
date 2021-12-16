@@ -1,16 +1,15 @@
 import { Alert, AlertTitle, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink,  } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import login from "../../../Images/city.png"
-// import useAuth from '../../../Hooks/useAuth';
-import './Register.css'
+import useAuth from '../../../Hooks/useAuth';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({})
     const [error, setError] = useState("");
-    // const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser, isLoading, authError } = useAuth();
 
-    // const history = useHistory()
+    const navigate = useNavigate()
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -28,20 +27,18 @@ const Register = () => {
         }
         else {
             setError("")
-            // registerUser(loginData.email, loginData.password, loginData.name, history)
+            registerUser(loginData.email, loginData.password, loginData.name, navigate)
         }
         e.preventDefault()
     }
     return (
-        <Container className=' register-container '>
+        <Container>
             <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Grid item xs={12} md={6} sx={{ mt: 8 }} className='input-text-container'>
-                    <Typography variant="h3" sx={{ color: "#60CCDA" }} gutterBottom>Register</Typography>
-                    {/* {!isLoading && <form onSubmit={handleSubmitForm}> */}
-                    <form onSubmit={handleSubmitForm} className='input-text'>
+                <Grid item xs={12} md={6} sx={{ mt: 8 }}>
+                    <Typography variant="h5" sx={{ color: "#60CCDA" }} gutterBottom>Register</Typography>
+                    {!isLoading && <form onSubmit={handleSubmitForm}>
                         <TextField
                             sx={{ width: "75%", m: 1 }}
-                            className="input-field"
                             onBlur={handleOnBlur}
                             required
                             id="standard-basic"
@@ -83,18 +80,18 @@ const Register = () => {
                             variant="contained"
                         >Register</Button>
                         <NavLink style={{ textDecoration: "none" }} to="/login"><Button variant="text">All Ready Register? Please Login</Button></NavLink>
-                    </form>
-                    {/* {isLoading && <CircularProgress />} */}
-                    {/* {user.email && <Alert severity="success">
+                    </form>}
+                    {isLoading && <CircularProgress />}
+                    {user.email && <Alert severity="success">
                         <AlertTitle>Success</AlertTitle>
                         Account successfully create.!
-                    </Alert>} */}
+                    </Alert>}
                     {
-                        // authError && <Alert severity="error">{authError}</Alert>
+                        authError && <Alert severity="error">{authError}</Alert>
                     }
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <img src={login} alt="" sx={{ width: 1 }} className='login-image'></img>
+                    <img src={login} alt="" sx={{ width: 1 }}></img>
                 </Grid>
             </Grid>
         </Container>

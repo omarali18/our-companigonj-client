@@ -1,14 +1,14 @@
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-// import useAuth from '../../../Hooks/useAuth';
+import useAuth from '../../../Hooks/useAuth';
 import "./Header.css"
 
 
 const Header = () => {
 
     const [click, setClick] = useState(false);
-    // const { user, handleLogout } = useAuth()
+    const { user, handleLogout } = useAuth()
 
     const handleClick = () => setClick(!click);
 
@@ -41,7 +41,7 @@ const Header = () => {
                             Hospitals
                         </NavLink>
                     </li>
-                    {/* {user.email && <li className="nav-item">
+                    {user.email && <li className="nav-item">
                         <NavLink
                             exact
                             to="/dashboard"
@@ -51,12 +51,11 @@ const Header = () => {
                         >
                             Dashboard
                         </NavLink>
-                    </li>} */}
-                    <li className="nav-item">
+                    </li>}
+                    {/* <li className="nav-item">
                         <NavLink
-                            exact
                             to="/dashboard"
-                            activeClassName="active"
+                            // activeClassName="active"
                             className="nav-links"
                             onClick={handleClick}
                         >
@@ -65,43 +64,42 @@ const Header = () => {
                     </li>
                     <li className="nav-item">
                             <NavLink
-                                    exact
                                    to="/login"
-                                   activeClassName="active"
+                                //    activeClassName="active"
                             className="nav-links"
                                     onClick={handleClick}
                                 >
                                     Login
                                 </NavLink>
-                            </li>
+                            </li> */}
 
 
                     {
-                        // user.email ?
+                        user.email ?
 
-                        //     <li className="nav-item">
-                        //         <NavLink
-                        //             exact
-                        //             to="/login"
-                        //             activeClassName="active"
-                        //             className="nav-links"
-                        //             onClick={handleClick}
-                        //         >
-                        //             <Button className="logout-btn" sx={{ color: "white" }} onClick={handleLogout}>logOut</Button>
-                        //         </NavLink>
-                        //     </li>
-                        //     :
-                        //     <li className="nav-item">
-                        //         <NavLink
-                        //             exact
-                        //             to="/login"
-                        //             activeClassName="active"
-                        //             className="nav-links"
-                        //             onClick={handleClick}
-                        //         >
-                        //             Login
-                        //         </NavLink>
-                        //     </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    exact
+                                    to="/login"
+                                    activeClassName="active"
+                                    className="nav-links"
+                                    onClick={handleClick}
+                                >
+                                    <Button className="logout-btn" sx={{ color: "white" }} onClick={handleLogout}>logOut</Button>
+                                </NavLink>
+                            </li>
+                            :
+                            <li className="nav-item">
+                                <NavLink
+                                    exact
+                                    to="/login"
+                                    activeClassName="active"
+                                    className="nav-links"
+                                    onClick={handleClick}
+                                >
+                                    Login
+                                </NavLink>
+                            </li>
                     }
 
 
