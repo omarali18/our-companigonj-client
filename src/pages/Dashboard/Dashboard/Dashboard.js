@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import SvgIcon from '@mui/material/SvgIcon';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawerWidth = 240;
 function HomeIcon(props) {
@@ -29,7 +30,7 @@ function HomeIcon(props) {
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin } = useAuth()
+    const { admin,logout } = useAuth()
 
 
     const handleDrawerToggle = () => {
@@ -41,7 +42,7 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                <Link style={{ textDecoration: 'none', color: 'gray' }} to="/home"><ListItem button>
+                <Link style={{ textDecoration: 'none', color: 'gray' }} to="/"><ListItem button>
                     <ListItemIcon>
                         <HomeIcon color="primary" />
                     </ListItemIcon>
@@ -49,15 +50,21 @@ function Dashboard(props) {
                 </ListItem></Link>
                 <Link style={{ textDecoration: 'none', color: 'gray' }} to="/Appointment"><ListItem button>
                     <ListItemIcon>
-                        <HomeIcon color="primary" />
+                        {/* <HomeIcon color="primary" /> */}
                     </ListItemIcon>
                     <ListItemText primary="Appointment" />
                 </ListItem></Link>
                 <Link style={{ textDecoration: 'none', color: 'gray' }} to="/dashboard"><ListItem button>
                     <ListItemIcon>
-                        <HomeIcon color="primary" />
+                        {/* <HomeIcon color="primary" /> */}
                     </ListItemIcon>
                     <ListItemText primary="Dashboard" />
+                </ListItem></Link>
+                <Link style={{ textDecoration: 'none', color: 'gray' }} to="/dashboard/AddReview"><ListItem button>
+                    <ListItemIcon>
+                        {/* <HomeIcon color="primary" /> */}
+                    </ListItemIcon>
+                    <ListItemText primary="AddReview" />
                 </ListItem></Link>
                 {
                     admin && <Box>
@@ -76,6 +83,12 @@ function Dashboard(props) {
 
                     </Box>
                 }
+                <Link style={{ textDecoration: 'none', color: 'gray' }} to="/login" onClick={logout}><ListItem button>
+                    <ListItemIcon>
+                        <LogoutIcon color="primary" />
+                    </ListItemIcon>
+                    <ListItemText primary="Logout" />
+                </ListItem></Link>
 
 
             </List>
