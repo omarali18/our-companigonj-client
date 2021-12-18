@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Alert, AlertTitle, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import login from "../../../Images/city.png"
-import Header from '../../Shared/Header/Header';
+import login from "../../../Images/city.png";
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
@@ -28,7 +28,7 @@ const Login = () => {
     }
     return (
         <div>
-            <Header/>
+            <Navbar/>
             <Container>
             <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Grid item xs={12} md={6} sx={{ mt: 8 }}>

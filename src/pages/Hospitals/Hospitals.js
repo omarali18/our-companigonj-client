@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../Shared/Header/Header';
 import { Button, CardMedia, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Footer from "../Shared/Footer/Footer"
 import "./Hospitals.css"
+import Navbar from '../Shared/Navbar/Navbar';
 
 const Hospitals = () => {
     const [hospitals,setHospitals] = useState([])
@@ -18,7 +18,7 @@ const Hospitals = () => {
     } ,[])
     return (
         <div className='hospitals-container'>
-            <Header/>
+            <Navbar/>
             <div className='hospital-head'><h1>Our all hospital</h1></div>
             <Box sx={{ flexGrow: 1 }} className="service-container" sx={{mx:"auto"}}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 12, md: 12 }} sx={{mb:10}}>

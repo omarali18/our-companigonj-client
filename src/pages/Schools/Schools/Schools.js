@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../../Shared/Header/Header';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Schools = () => {
     return (
         <div>
-            <Header/>
+            <Navbar/>
             <h1>this is all school</h1>
         </div>
     );

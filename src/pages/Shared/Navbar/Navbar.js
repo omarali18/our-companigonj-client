@@ -2,10 +2,9 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
-import "./Header.css"
+import "./Navbar.css"
 
-
-const Header = () => {
+const Navbar = () => {
 
     const [click, setClick] = useState(false);
     const { user, logout } = useAuth()
@@ -130,4 +129,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;
