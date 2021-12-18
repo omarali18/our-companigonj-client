@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import "./Service.css"
 import { Button, Grid } from '@mui/material';
 import { Box } from '@mui/system';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -14,17 +15,20 @@ const services =[
     {
         id: 1,
         img:hospital,
-        name: "Hospital"
+        name: "Hospital",
+        path:"hospitals"
     },
     {
         id: 2,
         img:police,
-        name: "Police station"
+        name: "Police station",
+        path:"polices"
     },
     {
         id: 3,
         img:school,
-        name: "School"
+        name: "School",
+        path:"schools"
     }
 ]
 
@@ -55,7 +59,11 @@ const Service = () => {
                         <Typography variant="h4" color="white" sx={{textAlign: 'center' }} >
                                 See more potion
                             </Typography>
-                            <Button className='detail' sx={{mt:2}}>More     Detail</Button>
+                            <NavLink
+                            className="direct-link"
+                            to={`/${service.path}`}
+                            ><Button className='detail' sx={{mt:2}}>More     Detail</Button></NavLink>
+                            {/* <Button className='detail' sx={{mt:2}}>More     Detail</Button> */}
                         </Box>
                 </Grid>
                 ))}

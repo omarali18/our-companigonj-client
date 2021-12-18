@@ -1,0 +1,10 @@
+.hospitals-container {
+  background-color: rgb(37, 37, 37);
+}
+
+.hospital-head {
+  text-align: center;
+  color: #e73dd0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}

@@ -12,16 +12,23 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState("");
+    const [isLogin, setIsLogin] = useState(false)
 
     const auth = getAuth();
-    const googleProvider = new GoogleAuthProvider();;
+    const googleProvider = new GoogleAuthProvider();
+    setTimeout(() => {
+        setIsLogin(false)
+        setAuthError("")
+    },5000);
+
 
     // Register user
-    const registerUser = (email, Password, name, history) => {
+    const registerUser = (email, Password, name, navigate) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, Password)
             .then(result => {
                 setAuthError("")
+                setIsLogin(true)
                 const newUser = { email, displayName: name }
                 setUser(newUser);
 
@@ -34,7 +41,7 @@ const useFirebase = () => {
                 })
                     .then(() => { })
                     .catch((error) => { })
-                history.replace("/")
+                    navigate("/")
             })
             .catch(error => {
                 setAuthError(error.message);
@@ -43,12 +50,12 @@ const useFirebase = () => {
     }
 
     // login user
-    const loginUser = (email, Password, location, history) => {
+    const loginUser = (email, Password, location, navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, Password)
             .then(result => {
                 const destination = location?.state?.from || "/"
-                history.replace(destination)
+                navigate(destination)
                 setAuthError("")
             })
             .catch(error => {
@@ -70,14 +77,15 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
     // Signin With Google
-    const signinWithGoogle = (location, history) => {
+    const signinWithGoogle = (location, navigate) => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 const user = result.user
                 const destination = location?.state?.from || "/"
-                history.replace(destination)
+                navigate(destination)
                 saveUsers(user.email, user.displayName, "PUT", Password)
+                setIsLogin(true)
                 setAuthError("")
             })
             .catch(error => {
@@ -134,6 +142,7 @@ const useFirebase = () => {
         isLoading,
         token,
         authError,
+        isLogin,
         registerUser,
         loginUser,
         signinWithGoogle,

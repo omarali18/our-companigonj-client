@@ -3,10 +3,11 @@ import { Alert, AlertTitle, Button, CircularProgress, Container, Grid, TextField
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import login from "../../../Images/city.png"
+import Header from '../../Shared/Header/Header';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
-    const { user, loginUser, signinWithGoogle, isLoading, authError } = useAuth()
+    const { user, loginUser, signinWithGoogle, isLoading, authError,isLogin } = useAuth()
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -26,7 +27,9 @@ const Login = () => {
         signinWithGoogle(location, navigate)
     }
     return (
-        <Container>
+        <div>
+            <Header/>
+            <Container>
             <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Grid item xs={12} md={6} sx={{ mt: 8 }}>
                     <Typography variant="h5" sx={{ color: "#60CCDA" }} gutterBottom>Login</Typography>
@@ -55,7 +58,7 @@ const Login = () => {
                         >Login</Button>
                         <NavLink style={{ textDecoration: "none" }} to="/register"><Button variant="text">New User? Please Register</Button></NavLink>
 
-                        {user.email && <Alert severity="success">
+                        {isLogin && <Alert severity="success">
                             <AlertTitle>Success</AlertTitle>
                             User Login successfully..!!
                         </Alert>}
@@ -71,6 +74,7 @@ const Login = () => {
                 </Grid>
             </Grid>
         </Container>
+        </div>
     );
 };
 

@@ -8,7 +8,7 @@ import "./Header.css"
 const Header = () => {
 
     const [click, setClick] = useState(false);
-    const { user, handleLogout } = useAuth()
+    const { user, logout } = useAuth()
 
     const handleClick = () => setClick(!click);
 
@@ -41,11 +41,30 @@ const Header = () => {
                             Hospitals
                         </NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink
+                            to="/schools"
+                            // activeClassName="active"
+                            className="nav-links"
+                            onClick={handleClick}
+                        >
+                            School
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink
+                            to="/polices"
+                            // activeClassName="active"
+                            className="nav-links"
+                            onClick={handleClick}
+                        >
+                            Police
+                        </NavLink>
+                    </li>
                     {user.email && <li className="nav-item">
                         <NavLink
-                            exact
                             to="/dashboard"
-                            activeClassName="active"
+                            // activeClassName="active"
                             className="nav-links"
                             onClick={handleClick}
                         >
@@ -79,21 +98,19 @@ const Header = () => {
 
                             <li className="nav-item">
                                 <NavLink
-                                    exact
                                     to="/login"
-                                    activeClassName="active"
+                                    // activeClassName="active"
                                     className="nav-links"
                                     onClick={handleClick}
                                 >
-                                    <Button className="logout-btn" sx={{ color: "white" }} onClick={handleLogout}>logOut</Button>
+                                    <Button className="logout-btn" sx={{ color: "white" }} onClick={logout}>logOut</Button>
                                 </NavLink>
                             </li>
                             :
                             <li className="nav-item">
                                 <NavLink
-                                    exact
                                     to="/login"
-                                    activeClassName="active"
+                                    // activeClassName="active"
                                     className="nav-links"
                                     onClick={handleClick}
                                 >

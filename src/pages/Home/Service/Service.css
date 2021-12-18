@@ -24,7 +24,9 @@
   opacity: 0.3;
   transition: all 0.3s ease-out;
 }
-
+.direct-link {
+  text-decoration: none;
+}
 .detail-button {
   position: absolute;
   left: 0;

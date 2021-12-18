@@ -1,13 +1,20 @@
 
-
 const firebaseConfig = {
-    apiKey: "AIzaSyDMeZKXxZuom7rwGhJ9FGCWGVLcvRxgxr4",
-    authDomain: "our-companigonj.firebaseapp.com",
-    projectId: "our-companigonj",
-    storageBucket: "our-companigonj.appspot.com",
-    messagingSenderId: "408804913532",
-    appId: "1:408804913532:web:9267c94da28337065db4f9"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+
 };
+
+// apiKey: process.env.REACT_APP_API_KEY,
+//     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+//     projectId: process.env.REACT_APP_PROJECT_ID,
+//     storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+//     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+//     appId: process.env.REACT_APP_APP_ID,
 
 
   export default firebaseConfig;

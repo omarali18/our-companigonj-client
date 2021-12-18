@@ -7,7 +7,7 @@ import useAuth from '../../../Hooks/useAuth';
 const Register = () => {
     const [loginData, setLoginData] = useState({})
     const [error, setError] = useState("");
-    const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser, isLoading, authError,isLogin } = useAuth();
 
     const navigate = useNavigate()
 
@@ -82,7 +82,7 @@ const Register = () => {
                         <NavLink style={{ textDecoration: "none" }} to="/login"><Button variant="text">All Ready Register? Please Login</Button></NavLink>
                     </form>}
                     {isLoading && <CircularProgress />}
-                    {user.email && <Alert severity="success">
+                    {isLogin && <Alert severity="success">
                         <AlertTitle>Success</AlertTitle>
                         Account successfully create.!
                     </Alert>}
