@@ -16,7 +16,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="nav-container">
                 <label className="nav-logo">
-                OUR COMPANIGONJ
+                COMPANIGONJ
                 </label>
 
                 <ul className={click ? "nav-menu active" : "nav-menu"}>

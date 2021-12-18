@@ -6,7 +6,7 @@ const Banner = () => {
         <div>
             <div className="banner-container">
                 <div className="banner-header">
-                    <h1>OUR <span className="mark-write">COMPANIGONJ</span></h1>
+                    <h1><span className="mark-write">WELCOME <br /> TO <br /> COMPANIGONJ</span></h1>
                 </div>
 
             </div>

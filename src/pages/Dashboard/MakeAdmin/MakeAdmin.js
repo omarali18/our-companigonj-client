@@ -15,19 +15,19 @@ const MakeAdmin = () => {
     console.log(email);
     const handleAdminSubmit = e => {
         e.preventDefault()
-        // fetch("https://aqueous-plains-02922.herokuapp.com/users/admin", {
-        //     method: "PUT",
-        //     headers: {
-        //         "authorization": ` Bearer ${token}`,
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(user)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setSuccess(true)
-        //         console.log(data);
-        //     })
+        fetch("https://aqueous-plains-02922.herokuapp.com/users/admin", {
+            method: "PUT",
+            headers: {
+                "authorization": ` Bearer ${token}`,
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setSuccess(true)
+                console.log(data);
+            })
     }
     return (
         <div>

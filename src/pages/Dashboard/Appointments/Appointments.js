@@ -17,12 +17,12 @@ const Appointments = ({ date }) => {
     const { user } = useAuth()
     const updateDate = date.toLocaleDateString()
 
-    // useEffect(() => {
-    //     const url = `https://aqueous-plains-02922.herokuapp.com/appointments?email=${user.email}&date=${updateDate}`
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setAppointments(data))
-    // }, [updateDate])
+    useEffect(() => {
+        const url = `https://aqueous-plains-02922.herokuapp.com/appointments?email=${user.email}&date=${updateDate}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setAppointments(data))
+    }, [updateDate])
 
     return (
         <div>

@@ -12,7 +12,7 @@ const Hospitals = () => {
         fetch("http://localhost:5000/hospitals")
         .then(res => res.json())
         .then(data =>{
-            console.log(data);
+            // console.log(data);
             setHospitals(data)
         })
     } ,[])

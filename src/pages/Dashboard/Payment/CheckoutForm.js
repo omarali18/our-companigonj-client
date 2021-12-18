@@ -13,19 +13,19 @@ const CheckoutForm = ({ appointment }) => {
     const [success, setSuccess] = useState("")
     const [proccessing, setProcessing] = useState(false)
 
-    // useEffect(() => {
-    //     fetch("https://aqueous-plains-02922.herokuapp.com/create-payment-intent", {
-    //         method: "POST",
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ price })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setClientSecret(data.clientSecret);
-    //         })
-    // }, [price])
+    useEffect(() => {
+        fetch("https://aqueous-plains-02922.herokuapp.com/create-payment-intent", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ price })
+        })
+            .then(res => res.json())
+            .then(data => {
+                setClientSecret(data.clientSecret);
+            })
+    }, [price])
 
 
     const handleSubmit = async (e) => {

@@ -11,6 +11,7 @@ import DashboardHome from './pages/Dashboard/DashboardHome/DashboardHome';
 import Payment from './pages/Dashboard/Payment/Payment';
 import Schools from './pages/Schools/Schools/Schools';
 import Polices from './pages/Police/Polices';
+import AddReview from './pages/Dashboard/AddReview/AddReview';
 
 function App() {
   return (
@@ -27,8 +28,8 @@ function App() {
             </PrivateRoute>} >
 
               <Route path="/dashboard" element={<DashboardHome />} />
-
               <Route path="/dashboard/payment/:AppointmentId" element={<Payment />} />
+              <Route path="/dashboard/AddReview" element={<AddReview />} />
 
               {/* <Route path="/dashboard/makeAdmin" element={<AdminRoute>
                 <MakeAdmin />

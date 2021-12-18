@@ -18,20 +18,20 @@ const AddDoctor = () => {
         formData.append("email", email);
         formData.append("image", image);
 
-        // fetch("https://aqueous-plains-02922.herokuapp.com/doctors", {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             console.log("Added a new doctor successfully");
-        //             setSuccess("New Doctor added successfully")
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
+        fetch("https://aqueous-plains-02922.herokuapp.com/doctors", {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    console.log("Added a new doctor successfully");
+                    setSuccess("New Doctor added successfully")
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
 
     }
 
