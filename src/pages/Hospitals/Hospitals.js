@@ -9,7 +9,7 @@ const Hospitals = () => {
     const [hospitals,setHospitals] = useState([])
 
     useEffect( ()=>{
-        fetch("http://localhost:5000/hospitals")
+        fetch("https://dry-savannah-86309.herokuapp.com/hospitals")
         .then(res => res.json())
         .then(data =>{
             // console.log(data);

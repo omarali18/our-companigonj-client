@@ -3,6 +3,7 @@ import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
 import Banner from '../Banner/Banner';
+import Reviews from '../Reviews/Reviews';
 import Service from '../Service/Service';
 import "./Home.css"
 
@@ -13,7 +14,7 @@ const Home = () => {
             <Navbar/>
             <Banner/>
             <Service/>
-            <h1>this is home</h1>
+            <Reviews/>
             <Footer/>
 
         </div>

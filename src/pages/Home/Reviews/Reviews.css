@@ -1,0 +1,14 @@
+.review-container {
+  margin-bottom: 6rem;
+}
+.review-title {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.review-box {
+  border: 1px solid rgb(114, 114, 246);
+  border-radius: 5px;
+  background-color: rgb(73, 70, 124);
+  width: 100%;
+}

@@ -10,7 +10,7 @@ import Navbar from '../Shared/Navbar/Navbar';
 const Polices = () => {
     const [polices,setPolices] = useState([])
     useEffect( () =>{
-        fetch("http://localhost:5000/polices")
+        fetch("https://dry-savannah-86309.herokuapp.com/polices")
         .then(res => res.json())
         .then(data =>setPolices(data))
     } ,[])
@@ -21,7 +21,7 @@ const Polices = () => {
             <div className='poloice-title'><h1>Give your complaint</h1></div>
             <Box className='police-detail' sx={{mx:"auto", mt:5}}>
                 <img src={police} width="100%" alt="" />
-               <Box sx={{mt:3}}>
+               <Box sx={{mt:8, mb:8}}>
                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 12, md: 12 }}>
                 {polices.map(service => (
                 <Grid item xs={4} sm={4} md={4} key={service.id} className='grid-item' >
